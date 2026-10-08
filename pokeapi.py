@@ -15,6 +15,9 @@ respuesta.raise_for_status()
 datos = respuesta.json()
 print(f"Nombre: {datos['name'].title()}")
 print(f"Peso: {datos['weight']} hectogramos")
+print("Tipos:")
+for tipo in datos["types"]:
+    print(f" - {tipo['type']['name']}")
 print("Habilidades:")
 for habilidad in datos["abilities"]:
     print(f" - {habilidad['ability']['name']}")
